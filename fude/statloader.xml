@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ProcessList>
+  <Process Name="statloader_[module].py" Enable="yes">
+    <WorkPath>/home/[module]/dataloader/</WorkPath>
+    <StartCmd>python statloader_[module].py</StartCmd>
+    <Matches>
+      <Match>statloader_[module].py</Match>
+    </Matches>
+    <Profiles>
+      <Profile>/etc/profile.d/oraenv.sh</Profile>
+    </Profiles>
+    <CheckCmd Interval="60" NumFail="3" RunTimeOut="30" />
+  </Process>
+</ProcessList>

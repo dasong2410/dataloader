@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<protocols>
+  <protocol name='IMPSCHAT'>
+    <table>NB_IMPS_CHAT</table>
+    <cols>SRC_APPTYPE,SRC_APPID,SRC_USERID,SRC_QQ,SRC_MOBILE,DEST_APPTYPE,DEST_APPID,MSGTIME,MSGTYPE,CONTENT,URL,TASKID</cols>
+    <bcp>MASS_*_*_IMPSCHAT_*_*</bcp>
+    <stat></stat>
+    <instat>0</instat>
+  </protocol>
+</protocols>
