@@ -19,10 +19,9 @@ class BcpLoader(threading.Thread):
     threading.Thread.__init__(self, name=thdName)
 
   #设置所需的所有变量
-  def setAll(self, bcpDir, ctlDir, sqlldrLogDir, badFileRoot, badLogRoot, statLogDir, statBcpFile, localDbid, protocolBodyDict, logger, toolkit):
+  def setAll(self, bcpDir, ctlDir, badFileRoot, badLogRoot, statLogDir, statBcpFile, localDbid, protocolBodyDict, logger, toolkit):
     self.bcpDir = bcpDir
     self.ctlDir = ctlDir
-    self.sqlldrLogDir = sqlldrLogDir
     self.badFileRoot = badFileRoot
     self.badLogRoot = badLogRoot
     self.statLogDir = statLogDir

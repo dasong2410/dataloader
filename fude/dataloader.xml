@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ProcessList>
-  <Process Name="dataloader_[module].py" Enable="yes">
-    <WorkPath>/home/[module]/dataloader/</WorkPath>
-    <StartCmd>python dataloader_[module].py</StartCmd>
+  <Process Name="dataloader.py" Enable="yes">
+    <WorkPath>/home/noah/dataloader/</WorkPath>
+    <StartCmd>python dataloader.py</StartCmd>
     <Matches>
-      <Match>dataloader_[module].py</Match>
+      <Match>dataloader.py</Match>
     </Matches>
     <Profiles>
       <Profile>/etc/profile.d/oraenv.sh</Profile>

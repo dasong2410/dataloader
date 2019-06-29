@@ -1,5 +1,5 @@
 MAILTO=""
 #删除过期文件
-30 2 * * * root sh /home/[module]/dataloader/cleaner.sh 1>/dev/null 2>&1
+30 2 * * * root sh /home/noah/dataloader/cleaner.sh 1>/dev/null 2>&1
 #kill僵死进程
-0 */2 * * * root sh /home/[module]/dataloader/kill_zombie.sh 1>/dev/null 2>&1
+0 */2 * * * root sh /home/noah/dataloader/kill_zombie.sh 1>/dev/null 2>&1

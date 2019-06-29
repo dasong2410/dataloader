@@ -8,10 +8,6 @@ import random
 from noah import BcpLoader
 from Global import *
 
-#当前脚本名
-myFullName = sys.argv[0].split(os.sep)[-1]
-myPrefixName = myFullName.split(".")[0]
-
 #参数处理
 opts = toolkit.getOpts(sys.argv[1:])
 
@@ -25,9 +21,9 @@ for o,a in opts:
 
 #检查环境
 #检查程序是否正在运行
-if toolkit.isRunning(myFullName) > 1:
-  dataLogger.info("%s正在运行"%(myPrefixName))
-  print "%s正在运行"%(myPrefixName)
+if toolkit.isRunning("dataloader.py") > 1:
+  dataLogger.info("dataloader正在运行")
+  print "dataloader正在运行"
   sys.exit()
 
 #配置文件不存在则退出
@@ -43,7 +39,7 @@ threadList = {}
 
 #入库代码
 while True:
-  dataLogger.info("%s开始处理数据"%(myPrefixName))
+  dataLogger.info("dataloader开始处理数据")
 
   #主机列表遍历
   for db in dbs:
@@ -67,14 +63,14 @@ while True:
         statBcpFile = '%s/MASS_%s_%s_BCPSTAT_0001_DTL'%(statBcpDir, sec, random.randint(100000000,999999999))
         
         threadList[thdName] = BcpLoader.BcpLoader(dbid, dbip, thdName, thdProts)
-        threadList[thdName].setAll(bcpDir, ctlDir, sqlldrLogDir, badFileRoot, badLogRoot, statLogDir, statBcpFile, localDbid, protocolBodyDict, threadLogList[thdName], toolkit)
+        threadList[thdName].setAll(bcpDir, ctlDir, badFileRoot, badLogRoot, statLogDir, statBcpFile, localDbid, protocolBodyDict, threadLogList[thdName], toolkit)
         threadList[thdName].start()
         
-        dataLogger.debug("%s启动线程：%s\n"%(myPrefixName, thdName))
+        dataLogger.debug("dataloader启动线程：%s\n"%(thdName))
         dataLogger.debug("线程%s：%s\n"%(thdName, thdProts))
   
-  dataLogger.debug("%s线程数：%s\n"%(myPrefixName, len(threadList)))
+  dataLogger.debug("dataloader线程数：%s\n"%(len(threadList)))
   
   #等待一定时间
-  dataLogger.info("%s处理数据结束，等待%d秒\n"%(myPrefixName, dataInterval))
+  dataLogger.info("dataloader处理数据结束，等待%d秒\n"%(dataInterval))
   time.sleep(dataInterval)

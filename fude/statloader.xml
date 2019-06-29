@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ProcessList>
-  <Process Name="statloader_[module].py" Enable="yes">
-    <WorkPath>/home/[module]/dataloader/</WorkPath>
-    <StartCmd>python statloader_[module].py</StartCmd>
+  <Process Name="statloader.py" Enable="yes">
+    <WorkPath>/home/noah/dataloader/</WorkPath>
+    <StartCmd>python statloader.py</StartCmd>
     <Matches>
-      <Match>statloader_[module].py</Match>
+      <Match>statloader.py</Match>
     </Matches>
     <Profiles>
       <Profile>/etc/profile.d/oraenv.sh</Profile>

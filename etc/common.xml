@@ -8,16 +8,18 @@
   </versions>
   
   <common>
+    <pf_usrpwd>noahpf/noahpf@10.0.2.15:1521/ora10g</pf_usrpwd>
     <data_interval>60</data_interval>
     <stat_interval>3600</stat_interval>
     <stat_delay>25920000</stat_delay>
     <prot_queue_len>10</prot_queue_len>
-    <bcp_dir>/home/[module]/bcp</bcp_dir>
-    <home_dir>/home/[module]/dataloader</home_dir>
-    <local_dbid>1000</local_dbid>
+    <bcp_dir>/home/bcpsplit/dam_outpath</bcp_dir>
+    <home_dir>/home/noah/dataloader</home_dir>
+    <local_dbid>100</local_dbid>
   </common>
   
   <dbs>
-    <db id="1000">noahdbn/noahdbn@10.0.2.15:1521/ora10g</db>
+    <db id="100">noahpf/noahpf@10.0.2.15:1521/ora10g</db>
+    <db id="101">noahdbn/noahdbn@10.0.2.15:1521/ora10g</db>
   </dbs>
 </dataloader>
